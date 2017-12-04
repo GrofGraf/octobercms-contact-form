@@ -1,0 +1,5 @@
+{% if errorHappened %}
+    {% partial __SELF__~'::flash-messages' %}
+{% else %}
+    {{ contact_confirmation_message|raw }}
+{% endif %}
