@@ -16,7 +16,9 @@ class Settings extends Model
       'message_content',
       'button_text',
       'captcha',
-      'confirmation_message'
+      'confirmation_message',
+      'auto_reply_subject',
+      'auto_reply_content'
     ];
 
     // A unique code

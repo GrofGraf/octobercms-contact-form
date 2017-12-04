@@ -109,6 +109,7 @@ class Plugin extends PluginBase
     {
         return [
             'grofgraf.contactme::emails.message' => 'Mail template for contact from website',
+            'grofgraf.contactme::emails.auto-reply' => 'Mail template for auto reply',
         ];
     }
 }
