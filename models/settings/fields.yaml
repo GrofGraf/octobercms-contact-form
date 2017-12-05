@@ -5,7 +5,7 @@ fields:
     type: "text"
     default: "Name"
   email:
-    label: 'SEmail'
+    label: 'Email'
     comment: 'Sender email'
     type: "text"
     default: "Email"
