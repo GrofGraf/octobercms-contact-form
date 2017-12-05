@@ -43,11 +43,11 @@ class contactForm extends ComponentBase
         $this->addJs('https://www.google.com/recaptcha/api.js');
       }
       $this->page['label'] = [
-        'name' => Settings::instance()->name,
-        'email' => Settings::instance()->email,
-        'attachment' => Settings::instance()->attachment,
+        'name' => Settings::instance()->name_label,
+        'email' => Settings::instance()->email_label,
+        'attachment' => Settings::instance()->attachment_label,
         'message' => Settings::instance()->message_content,
-        'captcha' => Settings::instance()->captcha,
+        'captcha' => Settings::instance()->captcha_label,
         'button_text' => Settings::instance()->button_text
       ];
     }

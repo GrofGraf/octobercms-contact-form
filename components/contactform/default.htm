@@ -9,19 +9,19 @@
   >
   <div class="form-group">
     <label for="name">
-      {{label.name_label}}
+      {{label.name}}
     </label>
     <input type="text" name="name" class="form-control">
   </div>
   <div class="form-group">
     <label for="email">
-      {{label.email_label}}
+      {{label.email}}
     </label>
     <input type="text" name="email" class="form-control">
   </div>
   {% if __SELF__.enableFileUpload %}
   <div class="form-group">
-    <label for="attachment">{{label.attachment_label}}</label>
+    <label for="attachment">{{label.attachment}}</label>
     <input type="file" name="attachment" class="form-control">
   </div>
   {% endif %}
@@ -34,7 +34,7 @@
   {% if __SELF__.enableCaptcha %}
     <div class="form-group">
       <label for="g-recaptcha">
-        {{label.captcha_label}}
+        {{label.captcha}}
       </label>
       <div class="g-recaptcha" data-sitekey="{{ __SELF__.captchaSiteKey }}"></div>
     </div>
