@@ -7,7 +7,7 @@ use Mail;
 use Validator;
 use ValidationException;
 
-class contactForm extends ComponentBase
+class ContactForm extends ComponentBase
 {
     public $rules = [
         'name' => ['required'],

@@ -17,7 +17,7 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'ContactMe',
-            'description' => 'No description provided yet...',
+            'description' => 'Contact Form plugin for OctoberCMS',
             'author'      => 'GrofGraf',
             'icon'        => 'icon-envelope'
         ];
@@ -51,7 +51,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'GrofGraf\ContactMe\Components\contactForm' => 'contactForm',
+            'GrofGraf\ContactMe\Components\ContactForm' => 'contactForm',
         ];
     }
 
