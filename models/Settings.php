@@ -29,12 +29,12 @@ class Settings extends Model
     ];
 
     public $translatable = [
-      'name',
-      'email',
-      'attachment',
+      'name_label',
+      'email_label',
+      'attachment_label',
       'message_content',
       'button_text',
-      'captcha',
+      'captcha_label',
       'confirmation_message',
       'auto_reply_subject',
       'auto_reply_content'
