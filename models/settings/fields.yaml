@@ -6,49 +6,42 @@ tabs:
       type: "text"
       default: "Name"
       tab: General
-      required: 1
     email:
       label: 'Email'
       comment: 'Sender email'
       type: "text"
       default: "Email"
       tab: General
-      required: 1
     name_label:
       label: 'Name Label'
       comment: 'Text for name label'
       type: "text"
       default: "Name"
       tab: General
-      required: 1
     email_label:
       label: 'Email Label'
       comment: 'Text for email label'
       type: "text"
       default: "Email"
       tab: General
-      required: 1
     message_content:
       label: 'Message Label'
       comment: 'Text for message label'
       type: "text"
       default: "Message"
       tab: General
-      required: 1
     button_text:
       label: 'Send Button'
       comment: 'Text for send button'
       type: text
       default: 'Send!'
       tab: General
-      required: 1
     confirmation_message:
       label: 'Confirmation message'
       comment: 'Message that will appear after successful contact'
       type: richeditor
       default: 'Thank you for your contact!'
       tab: General
-      required: 1
     enable_file_upload:
       label: "Enable file upload"
       comment: "Enable file upload for attachments"
