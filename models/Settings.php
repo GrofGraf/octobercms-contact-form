@@ -45,4 +45,10 @@ class Settings extends Model
 
     // Reference to field configuration
     public $settingsFields = 'fields.yaml';
+
+    public function filterFields($fields, $context = null){
+      if (class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm")) {
+        $fields->auto_subscribe->hidden = false;
+      }
+    }
 }

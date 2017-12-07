@@ -78,6 +78,9 @@ class ContactForm extends ComponentBase
             ->subject(Settings::instance()->auto_reply_subject);
         });
       }
+      if(class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm") && Settings::get('auto_subscribe')){
+        \GrofGraf\MailgunSubscribe\Components\SubscribeForm::subscribe(post('email'));
+      }
       $this->page["contact_confirmation_message"] = Settings::instance()->confirmation_message;
       return;
     }

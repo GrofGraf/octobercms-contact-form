@@ -47,13 +47,13 @@ tabs:
       comment: "Enable file upload for attachments"
       type: switch
       default: true
-      tab: File upload
+      tab: File Upload
     attachment_label:
       label: 'Attachment Label'
       comment: 'Text for attachment label'
       type: "text"
       default: "Attachment"
-      tab: File upload
+      tab: File Upload
     enable_captcha:
       label: "Enable captcha"
       comment: "Enable captcha validation on contact form"
@@ -77,17 +77,23 @@ tabs:
       type: text
       tab: Captcha
     enable_auto_reply:
-      label: "Enable auto-reply"
-      comment: "Emable automatic reply email"
+      label: "Enable Auto-Reply"
+      comment: "Enable automatic reply email"
       type: switch
-      tab: Auto Reply
+      tab: Auto-Reply
     auto_reply_subject:
-      label: "Auto-reply subject"
+      label: "Auto-Reply Subject"
       comment: "Subject of automatic reply email"
       type: text
-      tab: Auto Reply
+      tab: Auto-Reply
     auto_reply_content:
-      label: "Auto reply content"
+      label: "Auto-Reply Content"
       comment: "Content of automatic reply email"
       type: richeditor
-      tab: Auto Reply
+      tab: Auto-Reply
+    auto_subscribe:
+      label: Enable Auto Subscribe
+      comment: "Enable automatic subscribe to maillist when contacted"
+      type: switch
+      tab: Maillist
+      hidden: true
