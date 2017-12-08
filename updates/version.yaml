@@ -1,3 +1,5 @@
 1.0.1: First version of ContactMe
 1.0.2:
   - Captcha credentials can be empty if captcha not enabled
+1.0.3:
+  - Component namespace error fixed
