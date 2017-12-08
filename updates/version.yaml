@@ -3,3 +3,6 @@
   - Captcha credentials can be empty if captcha not enabled
 1.0.3:
   - Component namespace error fixed
+1.0.4:
+  - Auto subscribe error fixed
+  - Added maillist title field 

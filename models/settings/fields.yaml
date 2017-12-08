@@ -87,4 +87,8 @@ tabs:
       comment: "Enable automatic subscribe to maillist when contacted"
       type: switch
       tab: Maillist
-      hidden: true
+    maillist_title:
+      label: Maillist Title
+      comment: "Title of maillist (if empty default MailgunSubscribe maillist will be used)"
+      type: text
+      tab: Maillist

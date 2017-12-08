@@ -48,6 +48,10 @@ class Settings extends Model
     public function filterFields($fields, $context = null){
       if (class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm")) {
         $fields->auto_subscribe->hidden = false;
+        $fields->maillist_title->hidden = false;
+      }else{
+        $fields->auto_subscribe->hidden = true;
+        $fields->maillist_title->hidden = true;
       }
     }
 }
