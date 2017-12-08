@@ -5,4 +5,6 @@
   - Component namespace error fixed
 1.0.4:
   - Auto subscribe error fixed
-  - Added maillist title field 
+  - Added maillist title field
+1.0.5:
+  - Customer name is posted to maillist
