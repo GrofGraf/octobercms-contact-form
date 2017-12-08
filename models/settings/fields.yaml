@@ -2,45 +2,38 @@ tabs:
   fields:
     name:
       label: 'Name'
-      comment: 'Sender name'
+      comment: 'Recipient name'
       type: "text"
-      default: "Name"
       tab: General
     email:
       label: 'Email'
-      comment: 'Sender email'
+      comment: 'Recipient email'
       type: "text"
-      default: "Email"
       tab: General
     name_label:
       label: 'Name Label'
       comment: 'Text for name label'
       type: "text"
-      default: "Name"
       tab: General
     email_label:
       label: 'Email Label'
       comment: 'Text for email label'
       type: "text"
-      default: "Email"
       tab: General
-    message_content:
+    message_label:
       label: 'Message Label'
       comment: 'Text for message label'
       type: "text"
-      default: "Message"
       tab: General
     button_text:
       label: 'Send Button'
       comment: 'Text for send button'
       type: text
-      default: 'Send!'
       tab: General
     confirmation_message:
       label: 'Confirmation message'
       comment: 'Message that will appear after successful contact'
       type: richeditor
-      default: 'Thank you for your contact!'
       tab: General
     enable_file_upload:
       label: "Enable file upload"
@@ -52,7 +45,6 @@ tabs:
       label: 'Attachment Label'
       comment: 'Text for attachment label'
       type: "text"
-      default: "Attachment"
       tab: File Upload
     enable_captcha:
       label: "Enable captcha"
@@ -64,7 +56,6 @@ tabs:
       label: "Captcha Label"
       comment: "Text for captcha label"
       type: "text"
-      default: "Are you a robot?"
       tab: Captcha
     captcha_site_key:
       label: "Captcha site key"

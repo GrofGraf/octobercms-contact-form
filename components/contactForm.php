@@ -61,7 +61,7 @@ class ContactForm extends ComponentBase
       if($validator->fails()){
         throw new ValidationException($validator);
       }
-      if(!$this->enableCaptcha(post('g-recaptcha-response'))){
+      if($this->enableCaptcha() && !$this->enableCaptcha(post('g-recaptcha-response'))){
         throw new ValidationException(['g-recaptcha-response' => 'Captcha credentials are incorrect']);
       }
       Mail::send('grofgraf.contactme::emails.message', array('message_content' => post('message_content')), function($m){

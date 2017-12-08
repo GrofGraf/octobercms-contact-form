@@ -14,10 +14,9 @@ class Settings extends Model
     public $rules = [
         'name' => ['required'],
         'email' => ['required', 'email'],
-        'message_content' => ['required'],
         'name_label' => ['required'],
         'email_label' => ['required'],
-        'message_content' => ['required'],
+        'message_label' => ['required'],
         'button_text' => ['required'],
         'confirmation_message' => ['required'],
         'attachment_label' => ['required_if:enable_file_upload,1'],
