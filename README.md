@@ -79,7 +79,7 @@ If the default partial is not suitable for your website, replace the component t
       </button>
     </form>
 
-The example uses standard partial `{{ __SELF__ }}::confirm` for displaying the subscription confirmation message. Confirmation message will be displayed in
+The example uses standard partial `{{ __SELF__ }}::confirm` for displaying the contact confirmation message. Confirmation message will be displayed in
 `.confirm-contact-container`. The default partial located in `plugins/grofgraf/contactme/components/contactform/confirm.htm`.
 
 Email templates for contact and auto-reply can be customized under **Settings > Mail > Mail Templates**

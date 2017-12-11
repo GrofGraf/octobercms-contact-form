@@ -64,7 +64,7 @@ class ContactForm extends ComponentBase
       if($this->enableCaptcha() && !$this->enableCaptcha(post('g-recaptcha-response'))){
         throw new ValidationException(['g-recaptcha-response' => 'Captcha credentials are incorrect']);
       }
-      Mail::send('grofgraf.contactme::emails.message', array('message_content' => post('message_content')), function($m){
+      Mail::send('grofgraf.contactme::emails.message', post(), function($m){
         $m->to(Settings::get('email'), Settings::get('name'))
           ->subject('Contact from website')
           ->replyTo(post('email'), post('name'));
@@ -73,7 +73,7 @@ class ContactForm extends ComponentBase
         }
       });
       if(Settings::get('enable_auto_reply')){
-        Mail::send('grofgraf.contactme::emails.auto-reply', array('auto_reply' => Settings::instance()->auto_reply_content), function($m){
+        Mail::send('grofgraf.contactme::emails.auto-reply', array_merge(post(), array('auto_reply' => Settings::instance()->auto_reply_content)), function($m){
           $m->to(post('email'), post('name'))
             ->subject(Settings::instance()->auto_reply_subject);
         });
