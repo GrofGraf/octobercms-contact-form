@@ -80,7 +80,7 @@ class ContactForm extends ComponentBase
       }
       if(class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm") && Settings::get('auto_subscribe')){
         $maillist = Settings::get('maillist_title') ?: null;
-        \GrofGraf\MailgunSubscribe\Components\SubscribeForm::subscribe(post('email'), $maillist, post('name'));
+        \GrofGraf\MailgunSubscribe\Components\SubscribeForm::subscribe(post('email'), $maillist, post('name'), 0);
       }
       $this->page["contact_confirmation_message"] = Settings::instance()->confirmation_message;
       return;

@@ -8,3 +8,5 @@
   - Added maillist title field
 1.0.5:
   - Customer name is posted to maillist
+1.0.6:
+  - Synchronized with latest MailgunSubscribe update
