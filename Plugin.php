@@ -62,12 +62,10 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'grofgraf.contactme.some_permission' => [
+            'grofgraf.contactme.settings' => [
                 'tab' => 'ContactMe',
-                'label' => 'Some permission'
+                'label' => 'Contact Form Settings'
             ],
         ];
     }

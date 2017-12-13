@@ -14,3 +14,5 @@
   - Added post() information to message and auto reply
 1.0.8:
   - Added variables to automatic reply email template
+1.0.9:
+  - Registered permissions
