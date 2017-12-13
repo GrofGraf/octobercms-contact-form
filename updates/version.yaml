@@ -12,3 +12,5 @@
   - Synchronized with latest MailgunSubscribe update
 1.0.7:
   - Added post() information to message and auto reply
+1.0.8:
+  - Added variables to automatic reply email template

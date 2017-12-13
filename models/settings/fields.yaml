@@ -72,6 +72,11 @@ tabs:
       comment: "Enable automatic reply email"
       type: switch
       tab: Auto-Reply
+    enable_auto_reply_attachment:
+      label: "Append Attachment"
+      comment: "Append attachment to Auto-Reply if exist"
+      type: switch
+      tab: Auto-Reply
     auto_reply_subject:
       label: "Auto-Reply Subject"
       comment: "Subject of automatic reply email"
@@ -79,7 +84,8 @@ tabs:
       tab: Auto-Reply
     auto_reply_content:
       label: "Auto-Reply Content"
-      comment: "Content of automatic reply email"
+      commentHtml: true
+      comment: "<div class='help-block'>Content of automatic reply email. Available variables in auto reply email:<ul><li>{{ name }} - Name of sender</li><li>{{ email }} - Email of sender</li><li>{{ message_content }} - Content of sent email</li></ul></div>"
       type: richeditor
       tab: Auto-Reply
     auto_subscribe:
