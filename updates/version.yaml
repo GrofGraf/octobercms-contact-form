@@ -16,3 +16,5 @@
   - Added variables to automatic reply email template
 1.0.9:
   - Registered permissions
+1.1.0:
+  - Fixed permission

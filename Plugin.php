@@ -98,7 +98,8 @@ class Plugin extends PluginBase
               'category'    => 'Marketing',
               'icon'        => 'icon-envelope',
               'class'       => 'GrofGraf\ContactMe\Models\Settings',
-              'order'       => 100
+              'order'       => 100,
+              'permissions' => ['grofgraf.contactme.settings']
           ]
       ];
     }
