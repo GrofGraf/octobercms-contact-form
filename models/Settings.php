@@ -36,7 +36,8 @@ class Settings extends Model
       'captcha_label',
       'confirmation_message',
       'auto_reply_subject',
-      'auto_reply_content'
+      'auto_reply_content',
+      'maillist_subscribe_label'
     ];
 
     // A unique code
@@ -49,9 +50,11 @@ class Settings extends Model
       if (class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm")) {
         $fields->auto_subscribe->hidden = false;
         $fields->maillist_title->hidden = false;
+        $fields->maillist_subscribe_label->hidden = false;
       }else{
         $fields->auto_subscribe->hidden = true;
         $fields->maillist_title->hidden = true;
+        $fields->maillist_subscribe_label->hidden = true;
       }
     }
 }

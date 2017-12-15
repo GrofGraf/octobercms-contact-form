@@ -74,6 +74,14 @@ If the default partial is not suitable for your website, replace the component t
           <div class="g-recaptcha" data-sitekey="{{ __SELF__.captchaSiteKey }}"></div>
         </div>
       {% endif %}
+      {% if __SELF__.mailgunSubscribeExist %}
+        <div class="form-group">
+          <div class="checkbox">
+            <label><input type="checkbox" name="maillist_subscribe" checked>{{label.maillist}}</label>
+            <input type="hidden" name="confirm_subscribe" value="true">
+          </div>
+        </div>
+      {% endif %}
       <button class="btn btn-primary btn-lg pull-right mt-4">
         {{label.button_text}}
       </button>

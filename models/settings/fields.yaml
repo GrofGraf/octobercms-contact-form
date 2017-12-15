@@ -98,3 +98,8 @@ tabs:
       comment: "Title of maillist (if empty default MailgunSubscribe maillist will be used)"
       type: text
       tab: Maillist
+    maillist_subscribe_label:
+      label: Agree to subscribtion label
+      comment: "Label for agree with subscribtion checkbox. (If checkbox doesn't exist, and subscription will be enabled, automatic subscribe will happen)"
+      type: text
+      tab: Maillist

@@ -48,7 +48,8 @@ class ContactForm extends ComponentBase
         'attachment' => Settings::instance()->attachment_label ?: "Attachment",
         'message' => Settings::instance()->message_content ?: "Message",
         'captcha' => Settings::instance()->captcha_label ?: "Are you a robot?",
-        'button_text' => Settings::instance()->button_text ?: "Send"
+        'button_text' => Settings::instance()->button_text ?: "Send",
+        'maillist' => Settings::instance()->maillist_subscribe_label ?: "Add me to maillist"
       ];
     }
 
@@ -68,8 +69,10 @@ class ContactForm extends ComponentBase
       if(Settings::get('enable_auto_reply')){
         $this->sendAutoReply();
       }
-      if(class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm") && Settings::get('auto_subscribe')){
-        $this->subscribeToMaillist();
+      if($this->mailgunSubscribeExist() && Settings::get('auto_subscribe')){
+        if(!Input::has('confirm_subscribe') || post('maillist_subscribe') == 'on'){
+          $this->subscribeToMaillist();
+        }
       }
       $this->page["contact_confirmation_message"] = Settings::instance()->confirmation_message;
       return;
@@ -134,6 +137,10 @@ class ContactForm extends ComponentBase
           $m->attach(Input::file('attachment'));
         }
       });
+    }
+
+    public function mailgunSubscribeExist(){
+      return class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm");
     }
 
     public function subscribeToMaillist(){
