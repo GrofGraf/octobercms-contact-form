@@ -10,7 +10,9 @@ use ValidationException;
 class ContactForm extends ComponentBase
 {
     public $rules = [
-        'name' => ['required'],
+        'name' => ['sometimes', 'required'],
+        'subject' => ['sometimes', 'required'],
+        'phone_number' => ['sometimes', 'required'],
         'email' => ['required', 'email'],
         'message_content' => ['required']
     ];
@@ -46,7 +48,9 @@ class ContactForm extends ComponentBase
         'name' => Settings::instance()->name_label ?: "Name",
         'email' => Settings::instance()->email_label ?: "Email",
         'attachment' => Settings::instance()->attachment_label ?: "Attachment",
-        'message' => Settings::instance()->message_content ?: "Message",
+        'subject' => Settings::instance()->subject_label ?: "Subject",
+        'phone_number' => Settings::instance()->phone_number_label ?: "Phone Number",
+        'message' => Settings::instance()->message_label ?: "Message",
         'captcha' => Settings::instance()->captcha_label ?: "Are you a robot?",
         'button_text' => Settings::instance()->button_text ?: "Send",
         'maillist' => Settings::instance()->maillist_subscribe_label ?: "Add me to maillist"
@@ -65,6 +69,7 @@ class ContactForm extends ComponentBase
       if($this->enableCaptcha() && !$this->enableCaptcha(post('g-recaptcha-response'))){
         throw new ValidationException(['g-recaptcha-response' => 'Captcha credentials are incorrect']);
       }
+
       $this->sendMail();
       if(Settings::get('enable_auto_reply')){
         $this->sendAutoReply();
@@ -84,6 +89,14 @@ class ContactForm extends ComponentBase
 
     public function enableCaptcha(){
       return Settings::get('enable_captcha');
+    }
+
+    public function enableSubject(){
+      return Settings::get('enable_subject');
+    }
+
+    public function enablePhoneNumber(){
+      return Settings::get('enable_phone_number');
     }
 
     public function captchaSiteKey(){
@@ -112,9 +125,11 @@ class ContactForm extends ComponentBase
     }
 
     public function sendMail(){
-      Mail::send('grofgraf.contactme::emails.message', post(), function($m){
+      $subject = 'Contact from website';
+      if($this->enableSubject()) $subject = post('subject');
+      Mail::send('grofgraf.contactme::emails.message', post(), function($m) use ($subject){
         $m->to(Settings::get('email'), Settings::get('name'))
-          ->subject('Contact from website')
+          ->subject($subject)
           ->replyTo(post('email'), post('name'));
         if(Input::file('attachment')){
           $m->attach(Input::file('attachment'));

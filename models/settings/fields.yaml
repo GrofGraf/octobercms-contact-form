@@ -20,6 +20,28 @@ tabs:
       comment: 'Text for email label'
       type: "text"
       tab: General
+    enable_subject:
+      label: "Enable subject"
+      comment: "Enable email subject"
+      type: switch
+      default: true
+      tab: General
+    subject_label:
+      label: 'Subject Label'
+      comment: 'Text for subject label'
+      type: "text"
+      tab: General
+    enable_phone_number:
+      label: "Enable phone number"
+      comment: "Enable sender phone number"
+      type: switch
+      default: false
+      tab: General
+    phone_number_label:
+      label: 'Phone Number Label'
+      comment: 'Text for phone number label'
+      type: "text"
+      tab: General
     message_label:
       label: 'Message Label'
       comment: 'Text for message label'

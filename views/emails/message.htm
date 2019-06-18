@@ -1,3 +1,6 @@
 <h1>Contact from {{name}}</h1>
+{% if phone_number is defined %}
+  <p>Phone number: {{phone_number}}</p>
+{% endif %}
 <p>{{message_content}}</p>
 <p>Reply To: {{email}}</p>

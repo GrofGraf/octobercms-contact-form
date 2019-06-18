@@ -48,12 +48,28 @@ If the default partial is not suitable for your website, replace the component t
         </label>
         <input type="text" name="name" class="form-control">
       </div>
+      {% if __SELF__.enablePhoneNumber %}
+        <div class="form-group">
+          <label for="phone_number">
+            {{label.phone_number}}
+          </label>
+          <input type="text" name="phone_number" class="form-control">
+        </div>
+      {% endif %}
       <div class="form-group">
         <label for="email">
           {{label.email}}
         </label>
         <input type="text" name="email" class="form-control">
       </div>
+      {% if __SELF__.enableSubject %}
+        <div class="form-group">
+          <label for="subject">
+            {{label.subject}}
+          </label>
+          <input type="text" name="subject" class="form-control">
+        </div>
+      {% endif %}
       {% if __SELF__.enableFileUpload %}
       <div class="form-group">
         <label for="attachment">{{label.attachment}}</label>
@@ -86,6 +102,7 @@ If the default partial is not suitable for your website, replace the component t
         {{label.button_text}}
       </button>
     </form>
+
 
 The example uses standard partial `{{ __SELF__ }}::confirm` for displaying the contact confirmation message. Confirmation message will be displayed in
 `.confirm-contact-container`. The default partial located in `plugins/grofgraf/contactme/components/contactform/confirm.htm`.

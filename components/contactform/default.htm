@@ -13,12 +13,28 @@
     </label>
     <input type="text" name="name" class="form-control">
   </div>
+  {% if __SELF__.enablePhoneNumber %}
+    <div class="form-group">
+      <label for="phone_number">
+        {{label.phone_number}}
+      </label>
+      <input type="text" name="phone_number" class="form-control">
+    </div>
+  {% endif %}
   <div class="form-group">
     <label for="email">
       {{label.email}}
     </label>
     <input type="text" name="email" class="form-control">
   </div>
+  {% if __SELF__.enableSubject %}
+    <div class="form-group">
+      <label for="subject">
+        {{label.subject}}
+      </label>
+      <input type="text" name="subject" class="form-control">
+    </div>
+  {% endif %}
   {% if __SELF__.enableFileUpload %}
   <div class="form-group">
     <label for="attachment">{{label.attachment}}</label>

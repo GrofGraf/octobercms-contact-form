@@ -20,3 +20,7 @@
   - Fixed permission
 1.1.1.:
   - Optional maillist subscribe consent field
+1.1.2.:
+  - Added optional subject field
+  - Added optional phone number field
+  - Fixed message label translation
