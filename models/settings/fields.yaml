@@ -117,7 +117,7 @@ tabs:
       tab: Maillist
     maillist_title:
       label: Maillist Title
-      comment: "Title of maillist (if empty default MailgunSubscribe maillist will be used)"
+      comment: "Title of maillist (if empty default subscribe (MailgunSubscribe / LocalSubscribe) plugin maillist will be used)"
       type: text
       tab: Maillist
     maillist_subscribe_label:

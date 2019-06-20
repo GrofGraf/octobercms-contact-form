@@ -74,7 +74,7 @@ class ContactForm extends ComponentBase
       if(Settings::get('enable_auto_reply')){
         $this->sendAutoReply();
       }
-      if($this->mailgunSubscribeExist() && Settings::get('auto_subscribe')){
+      if(($this->mailgunSubscribeExists() || $this->localMaillistExists()) && Settings::get('auto_subscribe')){
         if(!Input::has('confirm_subscribe') || post('maillist_subscribe') == 'on'){
           $this->subscribeToMaillist();
         }
@@ -154,12 +154,21 @@ class ContactForm extends ComponentBase
       });
     }
 
-    public function mailgunSubscribeExist(){
+    public function mailgunSubscribeExists(){
       return class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm");
+    }
+
+    public function localMaillistExists(){
+      return class_exists("\GrofGraf\LocalMaillist\Components\SubscribeForm");
     }
 
     public function subscribeToMaillist(){
       $maillist = Settings::get('maillist_title') ?: null;
-      \GrofGraf\MailgunSubscribe\Components\SubscribeForm::subscribe(post('email'), $maillist, post('name'), 0);
+      if($this->localMaillistExists()){
+        \GrofGraf\LocalMaillist\Components\SubscribeForm::subscribe(post('email'), $maillist, post('name'));
+      }
+      if($this->mailgunSubscribeExists()){
+        \GrofGraf\MailgunSubscribe\Components\SubscribeForm::subscribe(post('email'), $maillist, post('name'), 0);
+      }
     }
 }
