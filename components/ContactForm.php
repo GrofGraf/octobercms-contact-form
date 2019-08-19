@@ -132,7 +132,7 @@ class ContactForm extends ComponentBase
           ->subject($subject)
           ->replyTo(post('email'), post('name'));
         if(Input::file('attachment')){
-          $m->attach(Input::file('attachment'));
+          $m->attach(Input::file('attachment'), ['as' => Input::file('attachment')->getClientOriginalName()]);
         }
       });
     }
@@ -149,7 +149,7 @@ class ContactForm extends ComponentBase
         $m->to(post('email'), post('name'))
           ->subject(Settings::instance()->auto_reply_subject);
         if(Settings::get('enable_auto_reply_attachment') && Input::file('attachment')){
-          $m->attach(Input::file('attachment'));
+          $m->attach(Input::file('attachment'), ['as' => Input::file('attachment')->getClientOriginalName()]);
         }
       });
     }
